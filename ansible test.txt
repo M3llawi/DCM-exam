@@ -1,0 +1,11 @@
+ssh-keygen -t rsa
+ssh-add 
+Then copy your public key to the servers with ssh-copy-id:
+Replace XX with the IP address of the Client machine.
+ssh-copy-id User@IP
+
+ubuntu:~# ansible all -m ping
+10.31.40.XX | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
